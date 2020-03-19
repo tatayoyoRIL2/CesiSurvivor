@@ -1,7 +1,7 @@
 # CesiSurvivor
 Good luck !!! Try to survive in this eventful and strewn history at CESI !
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7
 
 ## Development server
 
