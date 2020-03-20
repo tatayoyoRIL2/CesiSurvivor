@@ -19,4 +19,14 @@ func main() {
 		log.Println("Connection Established")
 	}
 
+	// struct in object the database
+	db.AutoMigrate(&Test{})
+	log.Println(db)
+}
+
+type Test struct {
+	Id   int    `json:”id”`
+	day  string `json:”user”`
+	time string `json:”user”`
+	msg  string `json:”user”`
 }
