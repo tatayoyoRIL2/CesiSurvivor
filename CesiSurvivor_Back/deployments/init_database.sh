@@ -13,7 +13,13 @@ DB_NAME='CesiSurvivor';
 TABLE='test';
 
 # database connection and commands
-mysql --user=${DB_USER} --password=${DB_PASSWD} ${DB_NAME} <<EOF
+mysql --user=${DB_USER} --password=${DB_PASSWD} <<EOF
+
+DROP DATABASE IF EXISTS ${DB_NAME};
+
+create database ${DB_NAME} default character set utf8 default collate utf8_bin;
+
+use ${DB_NAME};
 
 DROP TABLE IF EXISTS ${TABLE};
 
