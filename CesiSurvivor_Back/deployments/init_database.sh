@@ -7,7 +7,7 @@ exit 1
 fi
 
 # all constants
-DB_USER='omega';
+DB_USER='admin';
 DB_PASSWD='0071';
 DB_NAME='CesiSurvivor';
 TABLE='test';
