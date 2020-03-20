@@ -57,5 +57,4 @@ func main() {
 	// struct in object the database
 	db.AutoMigrate(&Test{})
 	handleRequests()
-
 }
