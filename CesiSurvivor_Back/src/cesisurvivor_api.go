@@ -26,7 +26,7 @@ func main() {
 
 type Test struct {
 	Id   int    `json:”id”`
-	day  string `json:”user”`
-	time string `json:”user”`
-	msg  string `json:”user”`
+	day  string `json:day`
+	time string `json:time`
+	msg  string `json:msg`
 }
