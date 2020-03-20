@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -25,12 +26,22 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: HomePage")
 }
 
+func returnAllTests(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Endpoint Hit: returnAllTest")
+	test := []Test{}
+	db.Find(&test)
+	fmt.Println(test)
+	fmt.Println(&test)
+	json.NewEncoder(w).Encode(test)
+}
+
 func handleRequests() {
 	log.Println("Starting development server at http://127.0.0.1:10000/")
 	log.Println("Quit the server with CONTROL-C.")
 	// creates a new instance of a mux router
 	myRouter := mux.NewRouter().StrictSlash(true)
 	myRouter.HandleFunc("/", homePage)
+	myRouter.HandleFunc("/all-tests", returnAllTests)
 	log.Fatal(http.ListenAndServe(":10000", myRouter))
 }
 
