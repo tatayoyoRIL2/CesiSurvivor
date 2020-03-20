@@ -15,9 +15,9 @@ var err error
 
 type Test struct {
 	Id   int    `json:”id”`
-	day  string `json:day`
-	time string `json:time`
-	msg  string `json:msg`
+	Day  string `json:”day”`
+	Time string `json:”time”`
+	Msg  string `json:”msg”`
 }
 
 func homePage(w http.ResponseWriter, r *http.Request) {
