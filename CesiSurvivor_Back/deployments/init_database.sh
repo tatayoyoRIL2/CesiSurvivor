@@ -10,7 +10,7 @@ fi
 DB_USER='admin';
 DB_PASSWD='0071';
 DB_NAME='CesiSurvivor';
-TABLE='test';
+TABLE='tests';
 
 # database connection and commands
 mysql --user=${DB_USER} --password=${DB_PASSWD} <<EOF
@@ -31,6 +31,9 @@ CREATE TABLE IF NOT EXISTS ${TABLE} (
 );
 
 INSERT INTO ${TABLE} (\`id\`, \`day\`, \`time\`, \`msg\`) VALUES (NULL, "monday", "16:47", "Hey bro!");
+INSERT INTO ${TABLE} (\`id\`, \`day\`, \`time\`, \`msg\`) VALUES (NULL, "monday", "16:48", "Hey bro!");
+INSERT INTO ${TABLE} (\`id\`, \`day\`, \`time\`, \`msg\`) VALUES (NULL, "monday", "16:49", "Hey bro!");
+INSERT INTO ${TABLE} (\`id\`, \`day\`, \`time\`, \`msg\`) VALUES (NULL, "monday", "16:50", "Hey bro!");
 
 exit
 EOF
