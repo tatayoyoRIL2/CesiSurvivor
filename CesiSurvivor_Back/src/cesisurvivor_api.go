@@ -1,14 +1,38 @@
 package main
 
 import (
+	"fmt"
 	"log"
+	"net/http"
 
+	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 var db *gorm.DB
 var err error
+
+type Test struct {
+	Id   int    `json:”id”`
+	day  string `json:day`
+	time string `json:time`
+	msg  string `json:msg`
+}
+
+func homePage(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Welcome to HomePage!")
+	fmt.Println("Endpoint Hit: HomePage")
+}
+
+func handleRequests() {
+	log.Println("Starting development server at http://127.0.0.1:10000/")
+	log.Println("Quit the server with CONTROL-C.")
+	// creates a new instance of a mux router
+	myRouter := mux.NewRouter().StrictSlash(true)
+	myRouter.HandleFunc("/", homePage)
+	log.Fatal(http.ListenAndServe(":10000", myRouter))
+}
 
 func main() {
 	// open database
@@ -21,12 +45,6 @@ func main() {
 
 	// struct in object the database
 	db.AutoMigrate(&Test{})
-	log.Println(db)
-}
+	handleRequests()
 
-type Test struct {
-	Id   int    `json:”id”`
-	day  string `json:day`
-	time string `json:time`
-	msg  string `json:msg`
 }
