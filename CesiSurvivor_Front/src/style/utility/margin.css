@@ -1,0 +1,303 @@
+/* == espacements vers le haut == */
+/* Basé sur les spaces */
+.marginTop0 {
+    margin-top: 0 !important;
+}
+
+.marginTopOneHalf {
+    margin-top: calc(var(--space1) * 0.5) !important;
+}
+
+.marginTop1s {
+    margin-top: var(--space1) !important;
+}
+
+.marginTop2s {
+    margin-top: var(--space2) !important;
+}
+
+.marginTop3s {
+    margin-top: var(--space3) !important;
+}
+
+.marginTop4s {
+    margin-top: var(--space4) !important;
+}
+
+.marginTop5s {
+    margin-top: var(--space5) !important;
+}
+
+.marginTop6s {
+    margin-top: var(--space6) !important;
+}
+
+.marginTop7s {
+    margin-top: var(--space7) !important;
+}
+
+.marginTop8s {
+    margin-top: var(--space8) !important;
+}
+
+.marginTop9s {
+    margin-top: var(--space9) !important;
+}
+
+.marginTop10s {
+    margin-top: var(--space10) !important;
+}
+
+.marginTop11s {
+    margin-top: var(--space11) !important;
+}
+
+.marginTop12s {
+    margin-top: var(--space12) !important;
+}
+
+.marginTop13s {
+    margin-top: var(--space13) !important;
+}
+
+.marginTop14s {
+    margin-top: var(--space14) !important;
+}
+
+.marginTop15s {
+    margin-top: var(--space15) !important;
+}
+
+.marginTop16s {
+    margin-top: var(--space16) !important;
+}
+
+/* == espacements vers le bas == */
+/* Basé sur les spaces */
+.marginBottom0 {
+    margin-bottom: 0 !important;
+}
+
+.marginBottomOneHalf {
+    margin-bottom: calc(var(--space1) * 0.5) !important;
+}
+
+.marginBottom1s {
+    margin-bottom: var(--space1) !important;
+}
+
+.marginBottom2s {
+    margin-bottom: var(--space2) !important;
+}
+
+.marginBottom3s {
+    margin-bottom: var(--space3) !important;
+}
+
+.marginBottom4s {
+    margin-bottom: var(--space4) !important;
+}
+
+.marginBottom5s {
+    margin-bottom: var(--space5) !important;
+}
+
+.marginBottom6s {
+    margin-bottom: var(--space6) !important;
+}
+
+.marginBottom7s {
+    margin-bottom: var(--space7) !important;
+}
+
+.marginBottom8s {
+    margin-bottom: var(--space8) !important;
+}
+
+.marginBottom9s {
+    margin-bottom: var(--space9) !important;
+}
+
+.marginBottom10s {
+    margin-bottom: var(--space10) !important;
+}
+
+.marginBottom11s {
+    margin-bottom: var(--space11) !important;
+}
+
+.marginBottom12s {
+    margin-bottom: var(--space12) !important;
+}
+
+.marginBottom13s {
+    margin-bottom: var(--space13) !important;
+}
+
+.marginBottom14s {
+    margin-bottom: var(--space14) !important;
+}
+
+.marginBottom15s {
+    margin-bottom: var(--space15) !important;
+}
+
+.marginBottom16s {
+    margin-bottom: var(--space16) !important;
+}
+
+
+
+/* == espacements vers la gauche == */
+.marginLeftMinus3s {
+    margin-left: calc(var(--space3) * -1) !important;
+}
+
+.marginLeft0 {
+    margin-left: 0 !important;
+}
+
+.marginLeft1s {
+    margin-left: var(--space1) !important;
+}
+
+.marginLeft2s {
+    margin-left: var(--space2) !important;
+}
+
+.marginLeft3s {
+    margin-left: var(--space3) !important;
+}
+
+.marginLeft4s {
+    margin-left: var(--space4) !important;
+}
+
+.marginLeft5s {
+    margin-left: var(--space5) !important;
+}
+
+.marginLeft6s {
+    margin-left: var(--space6) !important;
+}
+
+.marginLeft7s {
+    margin-left: var(--space7) !important;
+}
+
+.marginLeft8s {
+    margin-left: var(--space8) !important;
+}
+
+.marginLeft9s {
+    margin-left: var(--space9) !important;
+}
+
+.marginLeft10s {
+    margin-left: var(--space10) !important;
+}
+
+.marginLeft11s {
+    margin-left: var(--space11) !important;
+}
+
+.marginLeft12s {
+    margin-left: var(--space12) !important;
+}
+
+.marginLeft13s {
+    margin-left: var(--space13) !important;
+}
+
+.margiLeft14s {
+    margin-left: var(--space14) !important;
+}
+
+.margiLeft15s {
+    margin-left: var(--space15) !important;
+}
+
+.margiLeft16s {
+    margin-left: var(--space16) !important;
+}
+
+/* == espacements vers la droite == */
+.marginRight0 {
+    margin-right: 0 !important;
+}
+
+.marginRight1s {
+    margin-right: var(--space1) !important;
+}
+
+.marginRight2s {
+    margin-right: var(--space2) !important;
+}
+
+.marginRight3s {
+    margin-right: var(--space3) !important;
+}
+
+.marginRight4s {
+    margin-right: var(--space4) !important;
+}
+
+.marginRight5s {
+    margin-right: var(--space5) !important;
+}
+
+.marginRight6s {
+    margin-right: var(--space6) !important;
+}
+
+.marginRight7s {
+    margin-right: var(--space7) !important;
+}
+
+.marginRight8s {
+    margin-right: var(--space8) !important;
+}
+
+.marginRight9s {
+    margin-right: var(--space9) !important;
+}
+
+.marginRight10s {
+    margin-right: var(--space10) !important;
+}
+
+.marginRight11s {
+    margin-right: var(--space11) !important;
+}
+
+.marginRight12s {
+    margin-right: var(--space12) !important;
+}
+
+.marginRight13s {
+    margin-right: var(--space13) !important;
+}
+
+.marginRight14s {
+    margin-right: var(--space14) !important;
+}
+
+.marginRight15s {
+    margin-right: var(--space15) !important;
+}
+
+.marginRight16s {
+    margin-right: var(--space16) !important;
+}
+
+/* == Margin automatiques == */
+
+.marginYAuto {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+.marginXAuto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
