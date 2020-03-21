@@ -1,6 +1,10 @@
 /* == Déclaration des variables globales == */
 :root {
     /* == Color == */
+
+    /* Couleurs de Zorro */
+    --BlackZorro: #001529;
+
     /* Black */
     --black: #000;
     --blackFaded85: hsla(0, 0%, 0%, 0.85);
