@@ -27,12 +27,12 @@ INSERT INTO ${TABLE_USERS} (\`id_user\`, \`username\`) VALUES (NULL, "yoyotata")
 
 DROP TABLE IF EXISTS ${TABLE_SCORES};
 CREATE TABLE IF NOT EXISTS ${TABLE_SCORES} (
-    idScore INT AUTO_INCREMENT primary key NOT NULL,
+    id_score INT AUTO_INCREMENT primary key NOT NULL,
     score INT NOT NULL,
-    idUser VARCHAR(255) NOT NULL
+    id_user VARCHAR(255) NOT NULL
 );
-INSERT INTO ${TABLE_SCORES} (\`idScore\`, \`score\`, \`idUser\`) VALUES (NULL, 7, 1);
-INSERT INTO ${TABLE_SCORES} (\`idScore\`, \`score\`, \`idUser\`) VALUES (NULL, 9, 2);
+INSERT INTO ${TABLE_SCORES} (\`id_score\`, \`score\`, \`id_user\`) VALUES (NULL, 7, 1);
+INSERT INTO ${TABLE_SCORES} (\`id_score\`, \`score\`, \`id_user\`) VALUES (NULL, 9, 2);
 
 DROP TABLE IF EXISTS ${TABLE_QUESTIONS};
 CREATE TABLE IF NOT EXISTS ${TABLE_QUESTIONS} (
