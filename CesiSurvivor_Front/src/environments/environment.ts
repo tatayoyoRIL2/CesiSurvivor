@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  user: 'http://omegabionic.ddns.net:10183/user',
+  score: 'http://omegabionic.ddns.net:10183/score',
+  reponse: 'http://omegabionic.ddns.net:10183/reponse',
+  question: 'http://omegabionic.ddns.net:10183/question'
 };
 
 /*

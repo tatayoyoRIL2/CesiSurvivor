@@ -2,9 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { IUser } from 'src/app/models/user.model';
 import { UserService } from 'src/app/service/user.service';
-import { environment } from 'src/environments/environment';
+
 
 @Component({
     selector: 'app-init-game',
@@ -24,19 +25,13 @@ export class InitGameComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        // this.userService
-        //     .getUser()
-        //     .subscribe(users => {
-        //         console.log('USERS : ', users);
-        //         this.users = users;
-        //     });
-
-        const req = this.http.get<IUser[]>(environment.user).subscribe(data => {
-            console.log('DATA : ', this.data);
-            this.data = data;
-        });
-        ; // .pipe(takeUntil(this.destroy))
-
+        this.userService
+            .getUser()
+            .pipe(takeUntil(this.destroy))
+            .subscribe(users => {
+                console.log('USERS : ', users);
+                this.users = users;
+            });
     }
 
     submit(name: string): void {
