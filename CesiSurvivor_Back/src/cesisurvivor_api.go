@@ -27,6 +27,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 func returnAllUsers(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
 
 	// get all users
 	fmt.Println("Endpoint Hit: returnAllUsers")
@@ -40,6 +41,7 @@ func returnAllUsers(w http.ResponseWriter, r *http.Request) {
 func returnUsersById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
 
 	// get id
 	fmt.Println("Endpoint Hit: returnUsersById")
@@ -57,6 +59,7 @@ func returnUsersById(w http.ResponseWriter, r *http.Request) {
 func postUser(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
 
 	// get body
 	fmt.Println("Endpoint Hit: postUser")
