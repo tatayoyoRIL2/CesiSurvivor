@@ -48,12 +48,19 @@ func returnTestById(w http.ResponseWriter, r *http.Request) {
 }
 
 func postTest(w http.ResponseWriter, r *http.Request) {
+	// define header
 	w.Header().Set("Content-Type", "application/json") //TODO: ADD to other func
+
+	// get body
 	fmt.Println("Endpoint Hit: postTest")
 	var test Test
 	err = json.NewDecoder(r.Body).Decode(&test)
 	fmt.Println(err)
 	fmt.Println(test)
+	if err != nil {
+		http.Error(w, "Error marshaling JSON", http.StatusInternalServerError)
+		return
+	}
 
 	// insert into db
 	db.Create(&test)
