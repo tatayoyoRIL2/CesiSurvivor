@@ -57,13 +57,13 @@ func returnAllUsers(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(&user)
 	json.NewEncoder(w).Encode(user)
 }
-func returnUsersById(w http.ResponseWriter, r *http.Request) {
+func returnUserById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
 
 	// get id
-	fmt.Println("Endpoint Hit: returnUsersById")
+	fmt.Println("Endpoint Hit: returnUserById")
 	id := mux.Vars(r)["id"]
 	fmt.Println(id)
 
@@ -267,7 +267,7 @@ func handleRequests() {
 	myRouter.HandleFunc("/", homePage)
 
 	myRouter.HandleFunc("/user", returnAllUsers).Methods("GET")
-	myRouter.HandleFunc("/user/{id}", returnUsersById).Methods("GET")
+	myRouter.HandleFunc("/user/{id}", returnUserById).Methods("GET")
 	myRouter.HandleFunc("/user", postUser).Methods("POST")
 
 	myRouter.HandleFunc("/score", returnAllScores).Methods("GET")
