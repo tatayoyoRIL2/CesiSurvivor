@@ -14,11 +14,9 @@ import (
 var db *gorm.DB
 var err error
 
-type Test struct {
-	Id   int    `json:”id”`
-	Day  string `json:”day”`
-	Time string `json:”time”`
-	Msg  string `json:”msg”`
+type User struct {
+	IDUser   uint    `gorm:"primary_key"; json:"idUser""` // table: id_user
+	Username  string `json:"username"` // table: uasername
 }
 
 func homePage(w http.ResponseWriter, r *http.Request) {
@@ -26,47 +24,56 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: HomePage")
 }
 
-func returnAllTests(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Endpoint Hit: returnAllTest")
-	test := []Test{}
-	db.Find(&test)
-	fmt.Println(test)
-	fmt.Println(&test)
-	json.NewEncoder(w).Encode(test)
+func returnAllUsers(w http.ResponseWriter, r *http.Request) {
+	// define header
+	w.Header().Set("Content-Type", "application/json")
+
+	// get all users
+	fmt.Println("Endpoint Hit: returnAllUsers")
+	user := []User{}
+	db.Find(&user)
+	fmt.Println(user)
+	fmt.Println(&user)
+	json.NewEncoder(w).Encode(user)
 }
 
-func returnTestById(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Endpoint Hit: returnTestById")
+func returnUsersById(w http.ResponseWriter, r *http.Request) {
+	// define header
+	w.Header().Set("Content-Type", "application/json")
+
+	// get id
+	fmt.Println("Endpoint Hit: returnUsersById")
 	id := mux.Vars(r)["id"]
 	fmt.Println(id)
 
-	test := []Test{}
-	db.Find(&test, id)
-	fmt.Println(test)
-	fmt.Println(&test)
-	json.NewEncoder(w).Encode(test)
+	// get user by id
+	user := []User{}
+	db.Find(&user, id)
+	fmt.Println(user)
+	fmt.Println(&user)
+	json.NewEncoder(w).Encode(user)
 }
 
-func postTest(w http.ResponseWriter, r *http.Request) {
+func postUser(w http.ResponseWriter, r *http.Request) {
 	// define header
-	w.Header().Set("Content-Type", "application/json") //TODO: ADD to other func
+	w.Header().Set("Content-Type", "application/json")
 
 	// get body
-	fmt.Println("Endpoint Hit: postTest")
-	var test Test
-	err = json.NewDecoder(r.Body).Decode(&test)
+	fmt.Println("Endpoint Hit: postUser")
+	var user User
+	err = json.NewDecoder(r.Body).Decode(&user)
 	fmt.Println(err)
-	fmt.Println(test)
+	fmt.Println(user)
 	if err != nil {
 		http.Error(w, "Error marshaling JSON", http.StatusInternalServerError)
 		return
 	}
 
 	// insert into db
-	db.Create(&test)
-	fmt.Println(test)
-	fmt.Println(&test)
-	json.NewEncoder(w).Encode(test)
+	db.Create(&user)
+	fmt.Println(user)
+	fmt.Println(&user)
+	json.NewEncoder(w).Encode(user)
 }
 
 func handleRequests() {
@@ -75,9 +82,11 @@ func handleRequests() {
 	// creates a new instance of a mux router
 	myRouter := mux.NewRouter().StrictSlash(true)
 	myRouter.HandleFunc("/", homePage)
-	myRouter.HandleFunc("/test", postTest).Methods("POST")
-	myRouter.HandleFunc("/test/{id}", returnTestById)
-	myRouter.HandleFunc("/all-tests", returnAllTests)
+
+	myRouter.HandleFunc("/user", returnAllUsers).Methods("GET")
+	myRouter.HandleFunc("/user/{id}", returnUsersById).Methods("GET")
+	myRouter.HandleFunc("/user", postUser).Methods("POST")
+
 	log.Fatal(http.ListenAndServe(":10000", myRouter))
 }
 
@@ -91,6 +100,6 @@ func main() {
 	}
 
 	// struct in object the database
-	db.AutoMigrate(&Test{})
+	db.AutoMigrate(&User{})
 	handleRequests()
 }
