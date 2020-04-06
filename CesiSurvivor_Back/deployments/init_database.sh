@@ -1,11 +1,6 @@
 #!/bin/bash
 set -e
 
-if [ "$(id -u)" = "0" ]; then
-echo "Do not execute this script as root!"
-exit 1
-fi
-
 # all constants
 DB_USER='admin';
 DB_PASSWD='0071';
