@@ -36,14 +36,14 @@ INSERT INTO ${TABLE_SCORES} (\`id_score\`, \`score\`, \`id_user\`) VALUES (NULL,
 
 DROP TABLE IF EXISTS ${TABLE_QUESTIONS};
 CREATE TABLE IF NOT EXISTS ${TABLE_QUESTIONS} (
-    idQuestion INT AUTO_INCREMENT primary key NOT NULL,
+    id_question INT AUTO_INCREMENT primary key NOT NULL,
     label VARCHAR(255) NOT NULL,
-    answerList VARCHAR(255) NOT NULL
+    answer_list VARCHAR(255) NOT NULL
 );
-INSERT INTO ${TABLE_QUESTIONS} (\`idQuestion\`, \`label\`, \`answerList\`) VALUES (NULL, "A", "[1, 2, 3, 4]");
-INSERT INTO ${TABLE_QUESTIONS} (\`idQuestion\`, \`label\`, \`answerList\`) VALUES (NULL, "B", "[5, 6, 7, 8]");
-INSERT INTO ${TABLE_QUESTIONS} (\`idQuestion\`, \`label\`, \`answerList\`) VALUES (NULL, "C", "[9, 10, 11, 12]");
-INSERT INTO ${TABLE_QUESTIONS} (\`idQuestion\`, \`label\`, \`answerList\`) VALUES (NULL, "B", "[13, 14, 15, 16]");
+INSERT INTO ${TABLE_QUESTIONS} (\`id_question\`, \`label\`, \`answer_list\`) VALUES (NULL, "A", "[1, 2, 3, 4]");
+INSERT INTO ${TABLE_QUESTIONS} (\`id_question\`, \`label\`, \`answer_list\`) VALUES (NULL, "B", "[5, 6, 7, 8]");
+INSERT INTO ${TABLE_QUESTIONS} (\`id_question\`, \`label\`, \`answer_list\`) VALUES (NULL, "C", "[9, 10, 11, 12]");
+INSERT INTO ${TABLE_QUESTIONS} (\`id_question\`, \`label\`, \`answer_list\`) VALUES (NULL, "B", "[13, 14, 15, 16]");
 
 DROP TABLE IF EXISTS ${TABLE_ANSWERS};
 CREATE TABLE IF NOT EXISTS ${TABLE_ANSWERS} (
