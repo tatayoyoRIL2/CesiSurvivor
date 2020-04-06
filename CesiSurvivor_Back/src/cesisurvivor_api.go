@@ -35,12 +35,26 @@ func returnAllTests(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(test)
 }
 
+func returnTestById(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Endpoint Hit: returnTestById")
+	id := mux.Vars(r)["id"]
+	fmt.Println(id)
+
+	test := []Test{}
+	db.Find(&test, id)
+	fmt.Println(test)
+	fmt.Println(&test)
+	json.NewEncoder(w).Encode(test)
+
+}
+
 func handleRequests() {
 	log.Println("Starting development server at http://127.0.0.1:10000/")
 	log.Println("Quit the server with CONTROL-C.")
 	// creates a new instance of a mux router
 	myRouter := mux.NewRouter().StrictSlash(true)
 	myRouter.HandleFunc("/", homePage)
+	myRouter.HandleFunc("/test/{id}", returnTestById)
 	myRouter.HandleFunc("/all-tests", returnAllTests)
 	log.Fatal(http.ListenAndServe(":10000", myRouter))
 }
