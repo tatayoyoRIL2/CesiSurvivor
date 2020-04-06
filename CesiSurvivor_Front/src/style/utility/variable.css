@@ -1,0 +1,135 @@
+/* == Déclaration des variables globales == */
+:root {
+    /* == Color == */
+
+    /* Couleurs de Zorro */
+    --BlackZorro: #001529;
+
+    /* Black */
+    --black: #000;
+    --blackFaded85: hsla(0, 0%, 0%, 0.85);
+    --blackFaded65: hsla(0, 0%, 0%, 0.65);
+    --blackFaded45: rgba(0, 0, 0, 0.45);
+    --blackFaded25: hsla(0, 0%, 0%, 0.25);
+    --blackFaded20: hsla(0, 0%, 0%, 0.2);
+    --blackFaded15: hsla(0, 0%, 0%, 0.15);
+    --blackFaded4: hsla(0, 0%, 0%, 0.04);
+
+    /* Blue */
+    --blue100: #eaf0f9;
+    --blue200: #d7e2f4;
+    --blue300: #83b4ff;
+    --blue400: #4d94ff;
+    --blue500: #0a6cff;
+    --blue600: #0051c2;
+    --blue700: #00398f;
+
+    /* Green */
+    --green100: #eaf1e8;
+    --green200: #d6e5d2;
+    --green300: #97c384;
+    --green400: #3daa0e;
+    --green500: #31880c;
+    --green600: #256709;
+    --green700: #1b4b07;
+
+    /* Grey */
+    --grey100: #efefef;
+    --grey200: #e0e0e0;
+    --grey300: #b9b9b9;
+    --grey400: #949494;
+    --grey500: #757575;
+    --grey600: #595959;
+    --grey700: #404040;
+
+    /* Orange */
+    --orange100: #faece6;
+    --orange200: #f7dbce;
+    --orange300: #e3a68b;
+    --orange400: #e8723b;
+    --orange500: #c85019;
+    --orange600: #9a3e13;
+    --orange700: #6d2c0d;
+
+    /* Pink */
+    --pink100: #faebf4;
+    --pink200: #f7d9ea;
+    --pink300: #ee91b8;
+    --pink400: #e66ba0;
+    --pink500: #df2673;
+    --pink600: #ad1a5a;
+    --pink700: #7c133f;
+
+    /* Purple */
+    --purple100: #f1eef8;
+    --purple200: #e4def2;
+    --purple300: #b290ea;
+    --purple400: #8851e1;
+    --purple500: #6824d6;
+    --purple600: #531dab;
+    --purple700: #33116a;
+
+    /* Red */
+    --red100: #faebeb;
+    --red200: #f7d9d9;
+    --red300: #f19093;
+    --red400: #ec696e;
+    --red500: #e5242a;
+    --red600: #b2151a;
+    --red700: #7f1013;
+
+    /* Slate */
+    --slate50: #f5f8f9;
+    --slate100: #ebf1f3;
+    --slate200: #d8e4e8;
+    --slate300: #b4c6cc;
+    --slate400: #67797e;
+    --slate400Faded40: rgba(118, 136, 142, 0.4);
+    --slate500: #496169;
+    --slate500Faded10: hsla(195, 18%, 35%, 0.1);
+    --slate500Faded12: hsla(195, 18%, 35%, 0.12);
+    --slate500Faded16: hsla(195, 18%, 35%, 0.16);
+    --slate500Faded30: hsla(195, 18%, 35%, 0.3);
+    --slate600: #324349;
+    --slate700: #1c2427;
+
+    /* Teal */
+    --teal100: #e8f1f1;
+    --teal200: #d2e5e5;
+    --teal300: #81c1bd;
+    --teal400: #08a69e;
+    --teal500: #06847d;
+    --teal600: #056661;
+    --teal700: #054846;
+
+    /* White */
+    --white: #fff;
+    --whiteSmock: #f3f3f3;
+
+    /* Yellow */
+    --yellow100: #fef9e3;
+    --yellow200: #fef5c8;
+    --yellow300: #fadb14;
+    --yellow400: #aa9403;
+    --yellow500: #887602;
+    --yellow600: #695c02;
+    --yellow700: #4b4102;
+
+    /* == Variables d'espacement == */
+    --space1: 4px;
+    --space2: calc(var(--space1) * 2);
+    --space3: calc(var(--space1) * 3);
+    --space4: calc(var(--space1) * 4);
+    --space5: calc(var(--space1) * 5);
+    --space6: calc(var(--space1) * 6);
+    --space7: calc(var(--space1) * 7);
+    --space8: calc(var(--space1) * 8);
+    --space9: calc(var(--space1) * 9);
+    --space10: calc(var(--space1) * 10);
+    --space11: calc(var(--space1) * 11);
+    --space12: calc(var(--space1) * 12);
+    --space13: calc(var(--space1) * 13);
+    --space14: calc(var(--space1) * 14);
+    --space15: calc(var(--space1) * 15);
+    --space16: calc(var(--space1) * 16);
+}

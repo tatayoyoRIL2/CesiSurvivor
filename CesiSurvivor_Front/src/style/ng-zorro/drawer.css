@@ -1,0 +1,4 @@
+.ant-drawer-header, .ant-drawer-header-no-title, .ant-drawer-header {
+    background-color: var(--BlackZorro) !important;
+    border-radius: 0;
+}

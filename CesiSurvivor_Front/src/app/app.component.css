@@ -1,0 +1,28 @@
+:host {
+    display: block;
+}
+
+.layout {
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+}
+
+.burger {
+    padding: 0 var(--space5);
+    cursor: pointer;
+}
+
+.titleTemplate {
+    color: var(--whiteSmock);
+}
