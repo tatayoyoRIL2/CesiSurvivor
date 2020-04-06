@@ -31,6 +31,13 @@ type Score struct {
 	IDUser   uint    `json:"idUser""` // table: id_user
 }
 
+type Answer struct {
+	IDAnswer   uint    `gorm:"primary_key"; json:"idAnswer""` // table: id_answser
+	Label  string `json:"label"` // table: label
+	Picture  string `json:"picture"` // table: picture
+	IDQuestion   uint    `json:"idQuestion""` // table: id_question
+}
+
 func homePage(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Welcome to HomePage!")
 	fmt.Println("Endpoint Hit: HomePage")
@@ -198,6 +205,60 @@ func postQuestion(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(question)
 }
 
+// func answer
+func returnAllAnswers(w http.ResponseWriter, r *http.Request) {
+	// define header
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+
+	// get all answer
+	fmt.Println("Endpoint Hit: returnAllAnswer")
+	answer := []Answer{}
+	db.Find(&answer)
+	fmt.Println(answer)
+	fmt.Println(&answer)
+	json.NewEncoder(w).Encode(answer)
+}
+func returnAnswerById(w http.ResponseWriter, r *http.Request) {
+	// define header
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+
+	// get id
+	fmt.Println("Endpoint Hit: returnAnswerById")
+	id := mux.Vars(r)["id"]
+	fmt.Println(id)
+
+	// get answer by id
+	answer := []Answer{}
+	db.Find(&answer, id)
+	fmt.Println(answer)
+	fmt.Println(&answer)
+	json.NewEncoder(w).Encode(answer)
+}
+func postAnswer(w http.ResponseWriter, r *http.Request) {
+	// define header
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+
+	// get body
+	fmt.Println("Endpoint Hit: postAnswer")
+	var answer Answer
+	err = json.NewDecoder(r.Body).Decode(&answer)
+	fmt.Println(err)
+	fmt.Println(answer)
+	if err != nil {
+		http.Error(w, "Error marshaling JSON", http.StatusInternalServerError)
+		return
+	}
+
+	// insert into db
+	db.Create(&answer)
+	fmt.Println(answer)
+	fmt.Println(&answer)
+	json.NewEncoder(w).Encode(answer)
+}
+
 func handleRequests() {
 	log.Println("Starting development server at http://127.0.0.1:10000/")
 	log.Println("Quit the server with CONTROL-C.")
@@ -216,6 +277,10 @@ func handleRequests() {
 	myRouter.HandleFunc("/question", returnAllQuestions).Methods("GET")
 	myRouter.HandleFunc("/question/{id}", returnQuestionById).Methods("GET")
 	myRouter.HandleFunc("/question", postQuestion).Methods("POST")
+
+	myRouter.HandleFunc("/answer", returnAllAnswers).Methods("GET")
+	myRouter.HandleFunc("/answer/{id}", returnAnswerById).Methods("GET")
+	myRouter.HandleFunc("/answer", postAnswer).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":10000", myRouter))
 }
