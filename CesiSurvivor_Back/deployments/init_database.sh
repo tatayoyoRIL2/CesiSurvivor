@@ -8,6 +8,7 @@ DB_NAME='CesiSurvivor'
 TABLE_USERS='users'
 TABLE_SCORES='scores'
 TABLE_QUESTIONS='questions'
+TABLE_ANSWERS='answers'
 
 # database connection and commands
 mysql --user=${DB_USER} --host=127.0.0.1 --password=${DB_PASSWD} <<EOF
@@ -43,6 +44,30 @@ INSERT INTO ${TABLE_QUESTIONS} (\`idQuestion\`, \`label\`, \`answerList\`) VALUE
 INSERT INTO ${TABLE_QUESTIONS} (\`idQuestion\`, \`label\`, \`answerList\`) VALUES (NULL, "B", "[5, 6, 7, 8]");
 INSERT INTO ${TABLE_QUESTIONS} (\`idQuestion\`, \`label\`, \`answerList\`) VALUES (NULL, "C", "[9, 10, 11, 12]");
 INSERT INTO ${TABLE_QUESTIONS} (\`idQuestion\`, \`label\`, \`answerList\`) VALUES (NULL, "B", "[13, 14, 15, 16]");
+
+DROP TABLE IF EXISTS ${TABLE_ANSWERS};
+CREATE TABLE IF NOT EXISTS ${TABLE_ANSWERS} (
+    idAnswer INT AUTO_INCREMENT primary key NOT NULL,
+    label VARCHAR(255) NOT NULL,
+    picture VARCHAR(255) NOT NULL,
+    idQuestion INT NOT NULL
+);
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "A", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "B", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "C", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "D", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "E", "MY_PICTURE", "2");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "F", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "G", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "H", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "I", "MY_PICTURE", "3");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "J", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "K", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "L", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "M", "MY_PICTURE", "4");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "N", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "O", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "P", "MY_PICTURE", "1");
 
 exit
 EOF
