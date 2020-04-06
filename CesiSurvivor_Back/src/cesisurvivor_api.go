@@ -45,7 +45,21 @@ func returnTestById(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(test)
 	fmt.Println(&test)
 	json.NewEncoder(w).Encode(test)
+}
 
+func postTest(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json") //TODO: ADD to other func
+	fmt.Println("Endpoint Hit: postTest")
+	var test Test
+	err = json.NewDecoder(r.Body).Decode(&test)
+	fmt.Println(err)
+	fmt.Println(test)
+
+	// insert into db
+	db.Create(&test)
+	fmt.Println(test)
+	fmt.Println(&test)
+	json.NewEncoder(w).Encode(test)
 }
 
 func handleRequests() {
@@ -54,6 +68,7 @@ func handleRequests() {
 	// creates a new instance of a mux router
 	myRouter := mux.NewRouter().StrictSlash(true)
 	myRouter.HandleFunc("/", homePage)
+	myRouter.HandleFunc("/test", postTest).Methods("POST")
 	myRouter.HandleFunc("/test/{id}", returnTestById)
 	myRouter.HandleFunc("/all-tests", returnAllTests)
 	log.Fatal(http.ListenAndServe(":10000", myRouter))
