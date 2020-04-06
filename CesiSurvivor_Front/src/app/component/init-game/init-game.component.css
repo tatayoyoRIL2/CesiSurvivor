@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--space3);
+}
+
+
+@media screen and (max-width: 900px) {
+    .containerForm {
+        flex-direction: column;
+    }
+
+    .buttonSubmit {
+        margin: var(--space4) 0 0 !important;
+    }
+}

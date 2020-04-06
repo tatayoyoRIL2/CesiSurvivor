@@ -1,0 +1,39 @@
+<h1 nz-title>
+    Bienvenue dans la grande aventure du CESI !
+</h1>
+
+
+<nz-card [nzCover]="coverTemplate">
+    <h4 nz-title>
+        Commencer par entrer votre pseudo, puis cliquer sur le bouton commencer quand vous êtes prêt à tenter
+        l'aventure...
+    </h4>
+
+    <div
+        class="flex containerForm"
+    >
+        <input
+            #name
+            nz-input
+            placeholder="Pseudo"
+        />
+        <button
+            nz-button
+            nzType="primary"
+            class="marginLeft7s buttonSubmit"
+            (click)="submit(name.value)"
+        >
+            Commencer l'aventure !
+        </button>
+
+    </div>
+    <!-- Users : {{ users }} -->
+</nz-card>
+
+
+<ng-template #coverTemplate>
+    <img
+        alt="Image de couverture Gniiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
+        src="../../../assets/CESI_home_gniii2.jpeg"
+    ><img />
+</ng-template>
