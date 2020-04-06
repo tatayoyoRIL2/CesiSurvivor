@@ -26,7 +26,7 @@ INSERT INTO ${TABLE_USERS} (\`idUser\`, \`username\`) VALUES (NULL, "yoyotata");
 DROP TABLE IF EXISTS ${TABLE_SCORES};
 CREATE TABLE IF NOT EXISTS ${TABLE_SCORES} (
     idScore INT AUTO_INCREMENT primary key NOT NULL,
-    score INT(255) NOT NULL,
+    score INT NOT NULL,
     idUser VARCHAR(255) NOT NULL
 );
 INSERT INTO ${TABLE_SCORES} (\`idScore\`, \`score\`, \`idUser\`) VALUES (NULL, 7, 1);
