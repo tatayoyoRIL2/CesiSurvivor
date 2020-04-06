@@ -47,27 +47,27 @@ INSERT INTO ${TABLE_QUESTIONS} (\`id_question\`, \`label\`, \`answer_list\`) VAL
 
 DROP TABLE IF EXISTS ${TABLE_ANSWERS};
 CREATE TABLE IF NOT EXISTS ${TABLE_ANSWERS} (
-    idAnswer INT AUTO_INCREMENT primary key NOT NULL,
+    id_answer INT AUTO_INCREMENT primary key NOT NULL,
     label VARCHAR(255) NOT NULL,
     picture VARCHAR(255) NOT NULL,
-    idQuestion INT NOT NULL
+    id_question INT NOT NULL
 );
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "A", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "B", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "C", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "D", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "E", "MY_PICTURE", "2");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "F", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "G", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "H", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "I", "MY_PICTURE", "3");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "J", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "K", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "L", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "M", "MY_PICTURE", "4");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "N", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "O", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`idAnswer\`, \`label\`, \`picture\`, \`idQuestion\`) VALUES (NULL, "P", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "A", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "B", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "C", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "D", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "E", "MY_PICTURE", "2");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "F", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "G", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "H", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "I", "MY_PICTURE", "3");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "J", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "K", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "L", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "M", "MY_PICTURE", "4");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "N", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "O", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "P", "MY_PICTURE", "1");
 
 exit
 EOF
