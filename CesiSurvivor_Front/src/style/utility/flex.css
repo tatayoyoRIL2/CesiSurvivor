@@ -1,0 +1,87 @@
+.flex {
+    display: flex !important;
+}
+
+.inlineFlex {
+    display: inline-flex !important;
+}
+
+.flexRow {
+    flex-direction: row !important;
+}
+
+.flexRowReverse {
+    flex-direction: row-reverse !important;
+}
+
+.flexColumn {
+    flex-direction: column !important;
+}
+
+.flexColumnReverse {
+    flex-direction: column-reverse !important;
+}
+
+.flexWrap {
+    flex-wrap: wrap !important;
+}
+
+.flexItemFixed {
+    flex: 0 0 auto !important;
+}
+
+.flexItemExpandable {
+    flex: 1 0 auto !important;
+}
+
+.flexItemShrinkable {
+    flex: 0 1 auto !important;
+}
+
+.flexItemFluid {
+    flex: 1 1 auto !important;
+}
+
+.flexJustifyStart {
+    justify-content: flex-start !important;
+}
+
+.flexJustifyCenter {
+    justify-content: center !important;
+}
+
+.flexJustifyEnd {
+    justify-content: flex-end !important;
+}
+
+.flexJustifySpaceBetween {
+    justify-content: space-between !important;
+}
+
+.flexAlignStart {
+    align-items: flex-start !important;
+}
+
+.flexAlignCenter {
+    align-items: center !important;
+}
+
+.flexAlignEnd {
+    align-items: flex-end !important;
+}
+
+.flexAlignStretch {
+    align-items: stretch !important;
+}
+
+.flexAlignSelfStart {
+    align-self: flex-start !important;
+}
+
+.flexAlignSelfCenter {
+    align-self: center !important;
+}
+
+.flexAlignSelfEnd {
+    align-self: flex-end !important;
+}
