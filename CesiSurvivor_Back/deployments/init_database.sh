@@ -19,11 +19,11 @@ use ${DB_NAME};
 
 DROP TABLE IF EXISTS ${TABLE_USERS};
 CREATE TABLE IF NOT EXISTS ${TABLE_USERS} (
-    idUser INT AUTO_INCREMENT primary key NOT NULL,
+    id_user INT AUTO_INCREMENT primary key NOT NULL,
     username VARCHAR(255) NOT NULL
 );
-INSERT INTO ${TABLE_USERS} (\`idUser\`, \`username\`) VALUES (NULL, "omega");
-INSERT INTO ${TABLE_USERS} (\`idUser\`, \`username\`) VALUES (NULL, "yoyotata");
+INSERT INTO ${TABLE_USERS} (\`id_user\`, \`username\`) VALUES (NULL, "omega");
+INSERT INTO ${TABLE_USERS} (\`id_user\`, \`username\`) VALUES (NULL, "yoyotata");
 
 DROP TABLE IF EXISTS ${TABLE_SCORES};
 CREATE TABLE IF NOT EXISTS ${TABLE_SCORES} (
