@@ -25,17 +25,18 @@ type Question struct {
 	AnswerList   string    `json:"answerList""` // table: answer_list
 }
 
-func homePage(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome to HomePage!")
-	fmt.Println("Endpoint Hit: HomePage")
-}
-
 type Score struct {
 	IDScore   uint    `gorm:"primary_key"; json:"idScore""` // table: id_score
 	Score  uint `json:"score"` // table: score
 	IDUser   uint    `json:"idUser""` // table: id_user
 }
 
+func homePage(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Welcome to HomePage!")
+	fmt.Println("Endpoint Hit: HomePage")
+}
+
+// func users
 func returnAllUsers(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
@@ -49,7 +50,6 @@ func returnAllUsers(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(&user)
 	json.NewEncoder(w).Encode(user)
 }
-
 func returnUsersById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
@@ -67,7 +67,6 @@ func returnUsersById(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(&user)
 	json.NewEncoder(w).Encode(user)
 }
-
 func postUser(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
@@ -91,6 +90,7 @@ func postUser(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(user)
 }
 
+// func scores
 func returnAllScores(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
@@ -104,7 +104,6 @@ func returnAllScores(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(&score)
 	json.NewEncoder(w).Encode(score)
 }
-
 func returnScoreById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
@@ -122,7 +121,6 @@ func returnScoreById(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(&score)
 	json.NewEncoder(w).Encode(score)
 }
-
 func postScore(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
@@ -146,6 +144,7 @@ func postScore(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(score)
 }
 
+// func questions
 func returnAllQuestions(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
@@ -159,7 +158,6 @@ func returnAllQuestions(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(&question)
 	json.NewEncoder(w).Encode(question)
 }
-
 func returnQuestionById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
@@ -177,7 +175,6 @@ func returnQuestionById(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(&question)
 	json.NewEncoder(w).Encode(question)
 }
-
 func postQuestion(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
