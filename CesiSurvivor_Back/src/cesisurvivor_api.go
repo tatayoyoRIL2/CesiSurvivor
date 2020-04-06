@@ -16,7 +16,7 @@ var err error
 
 type User struct {
 	IDUser   uint    `gorm:"primary_key"; json:"idUser""` // table: id_user
-	Username  string `json:"username"` // table: uasername
+	Username  string `json:"username"` // table: username
 }
 
 func homePage(w http.ResponseWriter, r *http.Request) {
