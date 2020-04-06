@@ -47,7 +47,7 @@ func handleRequests() {
 
 func main() {
 	// open database
-	db, err = gorm.Open("mysql", "root:0071@tcp(127.0.0.1:3306)/CesiSurvivor?charset=utf8&parseTime=True")
+	db, err = gorm.Open("mysql", "omega:Hb6w7@tcp(127.0.0.1:3306)/CesiSurvivor?charset=utf8&parseTime=True")
 	if err != nil {
 		log.Println("Connection Failed to Open")
 	} else {

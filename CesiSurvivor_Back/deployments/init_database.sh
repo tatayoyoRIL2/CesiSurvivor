@@ -2,12 +2,13 @@
 set -e
 
 # all constants
-DB_USER='admin';
-DB_PASSWD='0071';
+DB_USER='omega';
+DB_PASSWD='Hb6w7';
 DB_NAME='CesiSurvivor';
+HOST='127.0.0.1';
 
 # database connection and create database
-mysql --user=${DB_USER} --password=${DB_PASSWD} <<EOF
+mysql --user=${DB_USER} --host=${HOST} --password=${DB_PASSWD} <<EOF
 
 DROP DATABASE IF EXISTS ${DB_NAME};
 
