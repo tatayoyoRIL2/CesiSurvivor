@@ -14,7 +14,7 @@ export class ReponseService {
         return this.http.get<IReponse[]>(environment.reponse);
     }
 
-    public getReponseById(idReponse: number): Observable<IReponse> {
+    public getReponseById(idReponse: number | string): Observable<IReponse> {
         return this.http.get<IReponse>(`${environment.reponse}/${idReponse}`);
     }
 

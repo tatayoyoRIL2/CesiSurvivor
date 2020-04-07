@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -12,7 +12,7 @@ import { IUser } from './../../models/user.model';
     templateUrl: './init-game.component.html',
     styleUrls: ['./init-game.component.css']
 })
-export class InitGameComponent implements OnInit {
+export class InitGameComponent implements OnDestroy, OnInit {
     users: IUser[] = [];
 
     data: any;
@@ -22,8 +22,14 @@ export class InitGameComponent implements OnInit {
     constructor(
         private messageService: NzMessageService,
         private userService: UserService,
-        private http: HttpClient
+        private router: Router
     ) { }
+
+
+    ngOnDestroy(): void {
+        this.destroy.next();
+        this.destroy.complete();
+    }
 
     ngOnInit() {
     }
@@ -37,7 +43,6 @@ export class InitGameComponent implements OnInit {
         this.userService
             .createUser({ username: name })
             .pipe(takeUntil(this.destroy))
-            .subscribe(data => console.log('Data POST : ', data));
+            .subscribe(() => this.router.navigate(['/', 'story']));
     }
-
 }

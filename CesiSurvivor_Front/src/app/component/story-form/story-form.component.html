@@ -1,0 +1,51 @@
+<h1
+    nz-title
+    class="marginTop12s marginBottom10s"
+>
+    {{ question?.label }}
+</h1>
+
+<div class="containerRep marginBottom16s">
+    <nz-card
+        [nzCover]="ImgCover"
+        *ngFor="let rep of question.answerList"
+        class="flex flexColumn flexAlignCenter cardReponse"
+    >
+        <ng-container *ngIf="question.IDQuestion != 11">
+            {{ rep.label }}
+        </ng-container>
+
+        <button
+            *ngIf="rep.idQuestion != 1"
+            nz-button
+            nzType="primary"
+            (click)="goToQuestion(rep.idQuestion)"
+            class="marginLeft7s"
+        >
+            Choisir cette réponse
+        </button>
+        <button
+            nz-button
+            nzType="primary"
+            *ngIf="rep.idQuestion == 1"
+            (click)="goToQuestion(rep.idQuestion)"
+            class="marginLeft7s"
+        >
+            Recommencer
+        </button>
+
+
+        <ng-template #ImgCover>
+            <img
+                *ngIf="question.IDQuestion != 11"
+                alt="Image de couverture d'une réponse"
+                [src]="'../../../assets/' + rep.IDAnswer + '.png'"
+            ><img />
+            <img
+                *ngIf="question.IDQuestion == 11"
+                alt="Image de couverture d'une réponse"
+                [src]="'../../../assets/win.png'"
+            ><img />
+        </ng-template>
+    </nz-card>
+</div>

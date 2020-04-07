@@ -1,7 +1,7 @@
 import { IReponse } from './reponse.model';
 
 export interface IQuestion {
-    id: number;
+    IDQuestion?: number;
     label: string;
-    reponses: IReponse[];
+    answerList: IReponse[];
 }

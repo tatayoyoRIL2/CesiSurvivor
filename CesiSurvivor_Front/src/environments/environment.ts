@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   user: '/api/user',
   score: '/api/score',
-  reponse: '/api/reponse',
+  reponse: '/api/answer',
   question: '/api/question'
 };
 

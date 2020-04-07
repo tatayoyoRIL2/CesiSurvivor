@@ -3,3 +3,8 @@
 @import './utility/variable.css';
 @import './utility/flex.css';
 @import './ng-zorro/drawer.css';
+
+
+.app_background {
+    background: var(--whiteSmock);
+}

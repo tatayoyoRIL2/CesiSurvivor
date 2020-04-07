@@ -1,8 +1,7 @@
-import { IQuestion } from './question.model';
 
 export interface IReponse {
-    id: number;
+    IDAnswer?: number;
     label: string;
-    image: string;
-    question: IQuestion;
+    picture?: string;
+    idQuestion?: number;
 }
