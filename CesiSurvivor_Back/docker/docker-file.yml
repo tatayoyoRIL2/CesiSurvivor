@@ -1,0 +1,14 @@
+version: '2'
+services:
+  cabin_db:
+    image: mysql:latest
+    volumes:
+      - "./.mysql-data_yoann-project/db:/var/lib/mysql"
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: Hb6w7
+      MYSQL_DATABASE: database
+      MYSQL_USER: omega
+      MYSQL_PASSWORD: Hb6w7
