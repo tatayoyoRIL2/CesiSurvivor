@@ -5,8 +5,10 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
+	"github.com/gorilla/handlers"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
@@ -262,6 +264,11 @@ func postAnswer(w http.ResponseWriter, r *http.Request) {
 func handleRequests() {
 	log.Println("Starting development server at http://127.0.0.1:10000/")
 	log.Println("Quit the server with CONTROL-C.")
+
+	headersOk := handlers.AllowedHeaders([]string{"X-Requested-With"})
+	originsOk := handlers.AllowedOrigins([]string{os.Getenv("ORIGIN_ALLOWED")})
+	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
+
 	// creates a new instance of a mux router
 	myRouter := mux.NewRouter().StrictSlash(true)
 	myRouter.HandleFunc("/", homePage)
@@ -282,7 +289,7 @@ func handleRequests() {
 	myRouter.HandleFunc("/answer/{id}", returnAnswerById).Methods("GET")
 	myRouter.HandleFunc("/answer", postAnswer).Methods("POST")
 
-	log.Fatal(http.ListenAndServe(":10000", myRouter))
+	log.Fatal(http.ListenAndServe(":10000", handlers.CORS(headersOk, originsOk, methodsOk)(myRouter)))
 }
 
 func main() {
