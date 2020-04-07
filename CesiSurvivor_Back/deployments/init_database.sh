@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS ${TABLE_QUESTIONS} (
     label VARCHAR(255) NOT NULL,
     answer_list VARCHAR(255) NOT NULL
 );
-INSERT INTO ${TABLE_QUESTIONS} (\`id_question\`, \`label\`, \`answer_list\`) VALUES (NULL, "Vous vous appelez Eric, vous entrez au CESI... Où allez-vous ? :)", "[1, 2, 3, 4]");
+INSERT INTO ${TABLE_QUESTIONS} (\`id_question\`, \`label\`, \`answer_list\`) VALUES (NULL, "Vous vous appelez Éric, vous entrez au CESI... Où allez-vous ? :)", "[1, 2, 3, 4]");
 INSERT INTO ${TABLE_QUESTIONS} (\`id_question\`, \`label\`, \`answer_list\`) VALUES (NULL, "Vous coûtez trop chère, on paye déjà trop de place des parking !", "[5]");
 INSERT INTO ${TABLE_QUESTIONS} (\`id_question\`, \`label\`, \`answer_list\`) VALUES (NULL, "Vous entrez dans la salle des RILB2...", "[6, 7, 8, 9]");
 INSERT INTO ${TABLE_QUESTIONS} (\`id_question\`, \`label\`, \`answer_list\`) VALUES (NULL, "Vous êtes embauché ! Faites ce qu'il vous plaît !!!", "[10, 11, 12, 13]");
@@ -64,16 +64,16 @@ INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_questi
 INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Dans le bureau de Thibaut", "MY_PICTURE", "4");
 INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Dans la salle des RILB2...", "MY_PICTURE", "3");
 
-INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Recommencer !", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Perdu !", "MY_PICTURE", "1");
 
-INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Bonjour Bonjour, je suis le pape François", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Bonjour Bonjour, je suis le pape François", "MY_PICTURE", "4");
 INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Gniiiiiiiii", "MY_PICTURE", "6");
-INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Wallah je vous jure que je vais tous vous niquer", "MY_PICTURE", "1");
-INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Ta grand mère suce des ours en Thailande !", "MY_PICTURE", "3");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Wallah je vous jure que je vais tous vous niquer", "MY_PICTURE", "6");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Ta grand mère suce des ours en Thailande !", "MY_PICTURE", "5");
 
 INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Aller draguer les secrétaires !", "MY_PICTURE", "7");
 INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Se prendre un café bien serrer", "MY_PICTURE", "8");
-INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Faire passer un oral aux RILB2", "MY_PICTURE", "1");
+INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Faire passer un oral aux RILB2", "MY_PICTURE", "9");
 INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Me prendre une bière", "MY_PICTURE", "8");
 
 INSERT INTO ${TABLE_ANSWERS} (\`id_answer\`, \`label\`, \`picture\`, \`id_question\`) VALUES (NULL, "Gni, mais quel est le rapport avec les plugins ?!", "MY_PICTURE", "10");
