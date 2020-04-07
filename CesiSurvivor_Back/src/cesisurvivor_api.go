@@ -49,7 +49,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 func returnAllUsers(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get all users
 	fmt.Println("Endpoint Hit: returnAllUsers")
@@ -62,7 +62,7 @@ func returnAllUsers(w http.ResponseWriter, r *http.Request) {
 func returnUserById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get id
 	fmt.Println("Endpoint Hit: returnUserById")
@@ -79,7 +79,7 @@ func returnUserById(w http.ResponseWriter, r *http.Request) {
 func postUser(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get body
 	fmt.Println("Endpoint Hit: postUser")
@@ -103,7 +103,7 @@ func postUser(w http.ResponseWriter, r *http.Request) {
 func returnAllScores(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get all score
 	fmt.Println("Endpoint Hit: returnAllScores")
@@ -116,7 +116,7 @@ func returnAllScores(w http.ResponseWriter, r *http.Request) {
 func returnScoreById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get id
 	fmt.Println("Endpoint Hit: returnScoreById")
@@ -133,7 +133,7 @@ func returnScoreById(w http.ResponseWriter, r *http.Request) {
 func postScore(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get body
 	fmt.Println("Endpoint Hit: postScore")
@@ -157,7 +157,7 @@ func postScore(w http.ResponseWriter, r *http.Request) {
 func returnAllQuestions(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get all question
 	fmt.Println("Endpoint Hit: returnAllQuestion")
@@ -170,7 +170,7 @@ func returnAllQuestions(w http.ResponseWriter, r *http.Request) {
 func returnQuestionById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get id
 	fmt.Println("Endpoint Hit: returnQuestionById")
@@ -187,7 +187,7 @@ func returnQuestionById(w http.ResponseWriter, r *http.Request) {
 func postQuestion(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get body
 	fmt.Println("Endpoint Hit: postQuestion")
@@ -211,7 +211,7 @@ func postQuestion(w http.ResponseWriter, r *http.Request) {
 func returnAllAnswers(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get all answer
 	fmt.Println("Endpoint Hit: returnAllAnswer")
@@ -224,7 +224,7 @@ func returnAllAnswers(w http.ResponseWriter, r *http.Request) {
 func returnAnswerById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get id
 	fmt.Println("Endpoint Hit: returnAnswerById")
@@ -241,7 +241,7 @@ func returnAnswerById(w http.ResponseWriter, r *http.Request) {
 func postAnswer(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get body
 	fmt.Println("Endpoint Hit: postAnswer")
