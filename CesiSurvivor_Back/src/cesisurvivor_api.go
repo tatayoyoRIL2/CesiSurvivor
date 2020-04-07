@@ -5,8 +5,10 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
+	"github.com/gorilla/handlers"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
@@ -47,7 +49,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 func returnAllUsers(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get all users
 	fmt.Println("Endpoint Hit: returnAllUsers")
@@ -60,7 +62,7 @@ func returnAllUsers(w http.ResponseWriter, r *http.Request) {
 func returnUserById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get id
 	fmt.Println("Endpoint Hit: returnUserById")
@@ -77,7 +79,7 @@ func returnUserById(w http.ResponseWriter, r *http.Request) {
 func postUser(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get body
 	fmt.Println("Endpoint Hit: postUser")
@@ -101,7 +103,7 @@ func postUser(w http.ResponseWriter, r *http.Request) {
 func returnAllScores(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get all score
 	fmt.Println("Endpoint Hit: returnAllScores")
@@ -114,7 +116,7 @@ func returnAllScores(w http.ResponseWriter, r *http.Request) {
 func returnScoreById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get id
 	fmt.Println("Endpoint Hit: returnScoreById")
@@ -131,7 +133,7 @@ func returnScoreById(w http.ResponseWriter, r *http.Request) {
 func postScore(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get body
 	fmt.Println("Endpoint Hit: postScore")
@@ -155,7 +157,7 @@ func postScore(w http.ResponseWriter, r *http.Request) {
 func returnAllQuestions(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get all question
 	fmt.Println("Endpoint Hit: returnAllQuestion")
@@ -168,7 +170,7 @@ func returnAllQuestions(w http.ResponseWriter, r *http.Request) {
 func returnQuestionById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get id
 	fmt.Println("Endpoint Hit: returnQuestionById")
@@ -185,7 +187,7 @@ func returnQuestionById(w http.ResponseWriter, r *http.Request) {
 func postQuestion(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get body
 	fmt.Println("Endpoint Hit: postQuestion")
@@ -209,7 +211,7 @@ func postQuestion(w http.ResponseWriter, r *http.Request) {
 func returnAllAnswers(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get all answer
 	fmt.Println("Endpoint Hit: returnAllAnswer")
@@ -222,7 +224,7 @@ func returnAllAnswers(w http.ResponseWriter, r *http.Request) {
 func returnAnswerById(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get id
 	fmt.Println("Endpoint Hit: returnAnswerById")
@@ -239,7 +241,7 @@ func returnAnswerById(w http.ResponseWriter, r *http.Request) {
 func postAnswer(w http.ResponseWriter, r *http.Request) {
 	// define header
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Content-Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	// get body
 	fmt.Println("Endpoint Hit: postAnswer")
@@ -262,6 +264,11 @@ func postAnswer(w http.ResponseWriter, r *http.Request) {
 func handleRequests() {
 	log.Println("Starting development server at http://127.0.0.1:10000/")
 	log.Println("Quit the server with CONTROL-C.")
+
+	headersOk := handlers.AllowedHeaders([]string{"X-Requested-With"})
+	originsOk := handlers.AllowedOrigins([]string{os.Getenv("ORIGIN_ALLOWED")})
+	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
+
 	// creates a new instance of a mux router
 	myRouter := mux.NewRouter().StrictSlash(true)
 	myRouter.HandleFunc("/", homePage)
@@ -282,7 +289,7 @@ func handleRequests() {
 	myRouter.HandleFunc("/answer/{id}", returnAnswerById).Methods("GET")
 	myRouter.HandleFunc("/answer", postAnswer).Methods("POST")
 
-	log.Fatal(http.ListenAndServe(":10000", myRouter))
+	log.Fatal(http.ListenAndServe(":10000", handlers.CORS(headersOk, originsOk, methodsOk)(myRouter)))
 }
 
 func main() {
