@@ -1,0 +1,10 @@
+{
+    "/api/*": {
+        "target": "http://omegabionic.ddns.net:10183/",
+        "secure": false,
+        "pathRewrite": {
+            "^/api": ""
+        }
+    },
+    "changeOrigin": true
+}

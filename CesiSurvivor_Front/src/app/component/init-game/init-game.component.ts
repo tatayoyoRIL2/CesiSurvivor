@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { IUser } from 'src/app/models/user.model';
 import { UserService } from 'src/app/service/user.service';
+import { IUser } from './../../models/user.model';
 
 
 @Component({
@@ -16,6 +16,7 @@ export class InitGameComponent implements OnInit {
     users: IUser[] = [];
 
     data: any;
+
     private destroy: Subject<void> = new Subject();
 
     constructor(
@@ -25,13 +26,6 @@ export class InitGameComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.userService
-            .getUser()
-            .pipe(takeUntil(this.destroy))
-            .subscribe(users => {
-                console.log('USERS : ', users);
-                this.users = users;
-            });
     }
 
     submit(name: string): void {
@@ -40,8 +34,10 @@ export class InitGameComponent implements OnInit {
             return;
         }
 
-        // Post le pseudo
-        // Get Question 1
+        this.userService
+            .createUser({ username: name })
+            .pipe(takeUntil(this.destroy))
+            .subscribe(data => console.log('Data POST : ', data));
     }
 
 }

@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  user: 'http://omegabionic.ddns.net:10183/user',
-  score: 'http://omegabionic.ddns.net:10183/score',
-  reponse: 'http://omegabionic.ddns.net:10183/reponse',
-  question: 'http://omegabionic.ddns.net:10183/question'
+  user: '/api/user',
+  score: '/api/score',
+  reponse: '/api/reponse',
+  question: '/api/question'
 };
 
 /*

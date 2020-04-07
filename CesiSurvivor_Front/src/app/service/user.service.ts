@@ -16,6 +16,6 @@ export class UserService {
     }
 
     public createUser(user: IUser): Observable<IUser> {
-        return this.http.post<IUser>(environment.user, { ...user });
+        return this.http.post<IUser>(environment.user, user);
     }
 }

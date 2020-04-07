@@ -18,11 +18,6 @@ export class QuestionService {
         return this.http.get<IQuestion>(`${environment.question}/${idQuestion}`);
     }
 
-    public getQuestionByIdReponse(idReponse: number): Observable<IQuestion> {
-        return this.http.get<IQuestion>(`${environment.question}/reponse/${idReponse}`);
-        // À voir avec Julien ce que l'on met comme url
-    }
-
     public createQuestion(question: IQuestion): Observable<IQuestion> {
         return this.http.post<IQuestion>(environment.question, { ...question });
     }
